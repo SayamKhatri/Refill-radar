@@ -101,4 +101,11 @@ resource "aws_dms_replication_task" "cdc_task" {
     Environment = "dev"
     Project     = "Refill-Radar"
   }
+    lifecycle {
+    ignore_changes = [
+      replication_task_settings,  
+      cdc_start_position          
+    ]
+  }
+
 }
