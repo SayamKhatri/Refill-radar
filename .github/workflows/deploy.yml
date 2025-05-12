@@ -3,8 +3,8 @@ name: Terraform Deployment
 on:
   push:
     branches:
-      - main  # or your default branch
-    paths:            # run CI/CD only if these paths change
+      - main  
+    paths:            
       - 'aws-backend/**'
 
 jobs:
