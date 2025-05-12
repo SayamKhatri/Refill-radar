@@ -9,7 +9,9 @@ resource "aws_dms_replication_subnet_group" "default" {
     "subnet-0866a80fa92f50800",
     "subnet-07c7c99fbf650c8d2"
   ]
-  depends_on = [aws_iam_role.dms_vpc_role]
+  depends_on = [aws_iam_role.dms_vpc_role,
+                aws_iam_role_policy_attachment.dms_vpc_access_policy
+  ]
   tags = {
     Name        = "refill-radar-subnet-group"
     Environment = "dev"
@@ -25,7 +27,9 @@ resource "aws_dms_replication_instance" "default" {
   multi_az                       = false
   replication_subnet_group_id    = aws_dms_replication_subnet_group.default.replication_subnet_group_id
 
-  depends_on = [aws_iam_role.dms_vpc_role]
+  depends_on = [aws_iam_role.dms_vpc_role,
+                aws_iam_role_policy_attachment.dms_vpc_access_policy
+  ]
 
   tags = {
     Name        = "refill-radar-dms-instance"
