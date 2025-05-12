@@ -1,0 +1,42 @@
+name: Terraform Deployment
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  terraform:
+    name: Terraform Apply
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: "us-east-1"
+      TF_VAR_rds_username: ${{ secrets.TF_VAR_rds_username }}
+      TF_VAR_rds_password: ${{ secrets.TF_VAR_rds_password }}
+      TF_VAR_rds_endpoint: ${{ secrets.TF_VAR_rds_endpoint }}
+
+    defaults:
+      run:
+        working-directory: aws-backend
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve

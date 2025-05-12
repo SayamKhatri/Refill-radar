@@ -60,3 +60,9 @@ resource "aws_iam_role_policy_attachment" "dms_kinesis_policy" {
   role       = aws_iam_role.dms_kinesis_access.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonKinesisFullAccess"
 }
+
+resource "aws_iam_policy_attachment" "lambda_s3_read_access" {
+  name       = "lambda-s3-read-access"
+  roles      = [aws_iam_role.lambda_exec_role.name]
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+}
