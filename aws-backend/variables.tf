@@ -13,7 +13,7 @@ variable "environment" {
 variable "lambda_runtime" {
   description = "Lambda runtime version"
   type        = string
-  default     = "python3.12"
+  default     = "python3.9"
 }
 
 variable "lambda_handler" {

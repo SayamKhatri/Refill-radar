@@ -7,8 +7,8 @@ resource "aws_lambda_function" "inventory_alert_handler" {
   filename         = "../lambda/inventory_alert_handler.zip"
   source_code_hash = filebase64sha256("../lambda/inventory_alert_handler.zip")
 
-  layers = [
-  "arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python313:1"
+layers = [
+  "arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python39:28"
 ]
 
 
