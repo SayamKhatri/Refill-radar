@@ -49,7 +49,6 @@ resource "aws_dms_endpoint" "source_mysql" {
   }
 }
 
-
 resource "aws_dms_endpoint" "target_kinesis" {
   endpoint_id       = "inventory-kinesis-target"
   endpoint_type     = "target"
