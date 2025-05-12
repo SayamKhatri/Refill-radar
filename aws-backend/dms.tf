@@ -9,7 +9,7 @@ resource "aws_dms_replication_subnet_group" "default" {
     "subnet-0866a80fa92f50800",
     "subnet-07c7c99fbf650c8d2"
   ]
-  
+
   depends_on = [time_sleep.wait_for_iam_propagation]
 
   tags = {
@@ -18,6 +18,7 @@ resource "aws_dms_replication_subnet_group" "default" {
     Project     = "Refill-Radar"
   }
 }
+
 
 resource "aws_dms_replication_instance" "default" {
   replication_instance_id        = "refill-radar-dms-instance"
