@@ -37,7 +37,7 @@ resource "aws_dms_endpoint" "source_mysql" {
   endpoint_type   = "source"
   engine_name     = "mysql"
   username        = "admin"
-  password        = "dog9pillowA#" 
+  password        = "XXX" 
   server_name     = "retail-database-oltp.cerq80qu4pct.us-east-1.rds.amazonaws.com"  
   port            = 3306
   database_name   = "HASP"
