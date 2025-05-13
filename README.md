@@ -3,6 +3,10 @@ Refill-Radar is a real-time alerting platform that monitors inventory levels and
 
 ## Architecture Overview
 
+
+![arc drawio (1)](https://github.com/user-attachments/assets/399e73f5-97b5-425a-8e03-fcfb3bb1fc7c)
+
+
 1. **Source Database**: MySQL hosted on Amazon RDS, containing inventory data.
 2. **AWS DMS**: Configured in CDC mode to capture changes to the `inventory` table that is in our RDS instance. 
 3. **Kinesis Data Stream**: Receives real-time change events from DMS.
