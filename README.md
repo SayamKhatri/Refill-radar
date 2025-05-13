@@ -1,5 +1,7 @@
 # Refill-radar
-Refill-Radar is a real-time alerting platform that monitors inventory levels and instantly notifies relevant team when any product stock drops below a predefined threshold.It is built entirely on AWS services with CI/CD pipelines, the project is designed to showcase a robust Change Data Capture (CDC) pipeline powered by AWS RDS, AWS DMS, Kinesis, Lambda, and DynamoDB, with a Streamlit dashboard for real-time monitoring.
+Refill-Radar is a real-time alerting platform that monitors inventory levels and instantly notifies relevant team when any product stock drops below a predefined threshold.
+
+It is built entirely on AWS services with CI/CD pipelines, the project is designed to showcase a robust Change Data Capture (CDC) pipeline powered by AWS RDS, AWS DMS, Kinesis, Lambda, and DynamoDB, with a Streamlit dashboard for real-time monitoring.
 
 ## Architecture Overview
 
