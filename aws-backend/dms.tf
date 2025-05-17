@@ -79,7 +79,7 @@ resource "aws_dms_replication_task" "cdc_task" {
   replication_instance_arn     = aws_dms_replication_instance.default.replication_instance_arn
   source_endpoint_arn          = aws_dms_endpoint.source_mysql.endpoint_arn
   target_endpoint_arn          = aws_dms_endpoint.target_kinesis.endpoint_arn
-  cdc_start_time            = timestamp()          
+  cdc_start_time               = formatdate("%s", timestamp())     
   replication_task_settings    = file("dms-task-settings.json")
 
   table_mappings = jsonencode({
