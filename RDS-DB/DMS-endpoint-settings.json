@@ -1,0 +1,16 @@
+{
+    "ServiceAccessRoleArn": "arn:aws:iam::XXXXXX:role/dms-s3-access-role",
+    "BucketName":          "refill-radar-lake",
+  
+    "DataFormat":          "parquet",
+    "ParquetVersion":      "PARQUET_2_0",
+  
+    "DatePartitionEnabled":  true,
+    "DatePartitionSequence": "YYYYMMDD",   
+    "DatePartitionDelimiter": "SLASH",     
+  
+    "CdcMinFileSize":      131072,         
+    "CdcMaxBatchInterval": 900,            
+    "TimestampColumnName": "event_time"
+  }
+  
